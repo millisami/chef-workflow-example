@@ -1,0 +1,15 @@
+{
+  "name": "syslog-client",
+  "description": "",
+  "json_class": "Chef::Role",
+  "default_attributes": {
+  },
+  "override_attributes": {
+  },
+  "chef_type": "role",
+  "run_list": [
+    "recipe[syslog-ng::client]"
+  ],
+  "env_run_lists": {
+  }
+}

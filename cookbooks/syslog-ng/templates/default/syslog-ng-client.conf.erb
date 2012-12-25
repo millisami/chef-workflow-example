@@ -1,0 +1,22 @@
+@version: 3.3
+@include "scl.conf"
+
+options { chain_hostnames(off); flush_lines(0); use_dns(no); use_fqdn(no);
+	  owner("root"); group("adm"); perm(0640); stats_freq(0);
+	  bad_hostname("^gconfd$");
+};
+
+source s_src {
+       system();
+       internal();
+};
+
+<% @syslog_servers.each_with_index do |server, i| %>
+
+destination d_net_<%= i.to_s %> { 
+  tcp("<%= server %>" port(514) log_fifo_size(1000));
+};
+
+log { source(s_src); destination(d_net_<%= i.to_s %>); };
+
+<% end %>
