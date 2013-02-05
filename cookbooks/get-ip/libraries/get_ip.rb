@@ -2,6 +2,8 @@ module GetIP
   def self.primary_ip(node)
     if node.chef_environment == "vagrant"
       get_interface(node, "eth1").first
+    elsif node.chef_environment == "ec2"
+      node["ec2"]["local_ipv4"]
     else
       node["ipaddress"]
     end
