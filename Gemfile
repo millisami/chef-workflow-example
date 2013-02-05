@@ -16,5 +16,14 @@ else
   end
 end
 
-gem 'moneta', '~> 0.6.0'
-gem 'chef', '10.16.2'
+
+gem 'chef', (ENV["CHEF_VERSION"] || '10.18.2')
+
+if ENV["CHEF_VERSION"]
+  if ENV["CHEF_VERSION"] < "10.16.4"
+    gem 'moneta', '~> 0.6.0'
+  end
+  gem 'chef', ENV["CHEF_VERSION"]
+else
+  gem 'chef'
+end

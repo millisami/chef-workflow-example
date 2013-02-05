@@ -55,6 +55,11 @@ configure_knife do
   # hitting this limit a lot, increase this value.
   #
   # search_index_wait 60
+
+  # this is this list of recipes you want tested with the 'test:recipes' task.
+  # Note that you must have the 'minitest-handler' cookbook available on your
+  # chef server for these to work.
+  # 
   test_recipes [ 'chef-client::service' ]
 end
 
