@@ -1,1 +1,3 @@
 .chef-workflow
+.ssh
+lib/chef-workflow-config.ec2.rb
