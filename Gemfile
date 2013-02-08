@@ -1,3 +1,15 @@
+#
+# Hello!
+#
+# I also use this repository to test chef-workflow itself. Yes, it's weird.
+#
+# You shouldn't need to change anything. If you want to add dependencies, add
+# them anywhere, it shouldn't change anything, presuming you're not using the
+# environment variables listed here.
+#
+# If you want some more explanation, check out battery.sh.
+#
+
 source :rubygems
 
 possibly_local = %w[
