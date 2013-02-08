@@ -1,3 +1,6 @@
+node.set["build_essential"]["compiletime"] = true
+include_recipe "build-essential"
+
 # Hack to install Gem immediately pre Chef 0.10.10 (CHEF-2879)
 chef_gem "minitest" do
   version node['minitest']['gem_version']
